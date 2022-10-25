@@ -1,0 +1,202 @@
+/*=====================================================================
+                        Project Gem Puzzle
+=====================================================================*/
+:root {
+    --white: #fff;
+    --black: #000;
+    --light-gray: #878995;
+    --beige:#d3cecb;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.6rem;
+    background-color: var(--beige);
+    color: var(--black);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 4rem 0;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.ctrl-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+button {
+    font-family: inherit;
+    font-size: 2rem;
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: .5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .52);
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.moves,
+.time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    color: var(--black);
+}
+
+.page {
+    max-width: 500px;
+    padding: 0 1rem 1rem;
+    margin: 0 auto;
+    text-align: center;
+    user-select: none;
+}
+
+.fifteen {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--white);
+    background: rgba(0, 0, 0, .52);
+    font-size: 2.5rem;
+    box-shadow: inset 1px 1px var(--light-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0;
+    color: var(--white);
+}
+
+.field-size__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.field-size {
+    padding: .5rem 1rem;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, .52);
+}
+
+.modal-shadow {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 2.5rem 0;
+    background-color: var(--beige);
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+
+.modal-content {
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+    line-height: 160%;
+}
+
+/*==============================
+        Media Queries
+==============================*/
+@media (max-width: 640px) {
+    .ctrl-panel,
+    .score-container,
+    .page,
+    .field-size__container {
+        max-width: 280px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+       font-size: 3.6rem;
+        padding-bottom: 1rem;
+    }
+
+    .item,
+    .time,
+    .moves,
+    button {
+        font-size: 1.4rem;
+    }
+}
