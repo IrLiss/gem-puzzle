@@ -418,6 +418,10 @@ function removeModal() {
     document.querySelector('button.shuffle').addEventListener('click', (event) => {
         document.querySelector('.shadow').classList.remove('shadow-active');
     });
+
+    document.querySelector('div.field-size__container').addEventListener('click', (event) => {
+        document.querySelector('.shadow').classList.remove('shadow-active');
+    });
 }
 
 /*==================
