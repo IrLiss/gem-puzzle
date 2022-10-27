@@ -28,6 +28,7 @@ header.append(h1, ctrlPanel);
 
 const buttonStartShuffle = document.createElement('button');
 buttonStartShuffle.innerHTML = 'Shuffle and start';
+buttonStartShuffle.className = 'shuffle';
 
 const buttonSave = document.createElement('button');
 buttonSave.innerHTML = 'Save';
@@ -63,7 +64,7 @@ scoreContainer.append(timeContainer, movesContainer);
 
 const pageNode = document.createElement('div');
 pageNode.className = 'page';
-main.append(pageNode)
+main.append(pageNode);
 
 const containerNodeDiv = document.createElement('div');
 containerNodeDiv.className = 'fifteen';
@@ -388,6 +389,7 @@ function createWinModal() {
     modal.append(modalContent);
 
     const modalTitle = document.createElement('h2');
+    modalTitle.className = 'win-message';
     modalTitle.innerHTML = `Hooray! You have solved the puzzle in ${formatDate(time)} and ${movesCount} moves!`;
     modalContent.append(modalTitle);
 
@@ -396,13 +398,25 @@ function createWinModal() {
     audioWin.autoplay = playAudio;
 }
 
+const shadowWin = document.createElement('div');
+shadowWin.className = 'shadow';
+main.append(shadowWin);
+
 function removeModal() {
     const modalShadow = document.querySelector('.modal-shadow');
+
+    if (document.querySelector('h2.win-message') !== null) {
+        document.querySelector('.shadow').classList.add('shadow-active');
+    }
 
     modalShadow.addEventListener('click', (event) => {
         if (event.target.classList.contains('modal-shadow')) {
             modalShadow.remove();
-        }
+            }
+    });
+
+    document.querySelector('button.shuffle').addEventListener('click', (event) => {
+        document.querySelector('.shadow').classList.remove('shadow-active');
     });
 }
 
